@@ -1,0 +1,149 @@
+$purple:#2b244d;
+$white:#ffffff;
+$pink:#f27bbb;
+$blue:#5960f3;
+$orange:#d5797f;
+$light-blue:#8c7dd7;
+$city_background:'./image/paris.jpg';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//flex-box 
+%center{
+    display: flex;
+    justify-content: center;
+}
+%align-column{
+    display: flex;
+    flex-direction: column;
+}
+%between{
+    display: flex;
+    justify-content: space-between;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+//navigation
+.nav__background{
+    width:100vw;
+    height:10vh;
+    background:$purple;
+}
+.nav__today{
+    @extend %center;
+    color:$white;
+    h4{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size:25px;
+    }
+    
+}
+
+//main-body
+.main__background{
+    background-image: linear-gradient(0deg,$blue,$pink);
+    height:90vh;
+    width: 100vw;
+    position: fixed;
+    .main__background--circle{
+        position: fixed;
+        height: 130vh;
+        width: 130vh;
+        overflow: hidden;
+        margin-left: 33.5vw;
+        background-image: linear-gradient(0deg,$light-blue,$orange);
+        border-radius: 50%;
+        display: inline-block;
+
+    }
+    
+}
+
+.cityWeather__container{
+    position: relative;
+    margin-left:20vw;
+    margin-right:20vw;
+    margin-top:10vh;
+    border-radius: 10px;
+
+    
+  
+    .cityWeather__background{
+        background-image:url($city_background);
+        background-size:cover;
+        border-radius: 10px 10px 0 0;
+        width:60vw;
+        height:35vh;
+        overflow: hidden;
+        box-sizing: border-box;
+        @extend %between;
+        .cityWeather__weather{
+            width:33%;
+            background-color:rgba(0,0,0,0.2);
+            color:$white;
+         
+            
+            .cityWeather__degree{
+                margin-top:0vh;
+                padding-top:9.1vh;
+                font-size:90px;
+                @extend %center;
+    
+            }
+            .cityWeather__situation{
+                margin-top:-10vh;
+                font-size:25px;
+                margin-right:1vw;
+                @extend %center;
+            }
+            .cityWeather__supplement{
+                @extend %center;
+                .cityWeather__humidity{
+                    @extend %align-column;
+                    margin-right:1.5vw;
+                    font-weight:500;
+                    letter-spacing:1px; 
+                    
+                }
+                hr{
+                    padding: 0;
+                    margin: 0;
+                    color:$white;
+                }
+                .cityWeather__wind{
+                    @extend %align-column;
+                    margin-left:3vw;
+                    font-weight:500;
+                    letter-spacing:1px; 
+                }
+            }
+        }
+        
+        
+    }
+    .cityWeather__city{
+        p{
+            font-size:35px;
+            color: $white;
+            font-weight: 500;
+            margin-top:8vh;
+            padding-right: 10vw;
+            letter-spacing:4px; 
+            .underline{
+                height:3px;
+                position: relative;
+                left:1.5rem;
+                margin-top:5px;
+                bottom:0;
+                width:50%;
+                background:$white;
+            }
+        }
+    }
+
+    
+}
