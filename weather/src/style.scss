@@ -32,6 +32,26 @@ $city_background:'./image/paris.jpg';
     align-items:center;
 }
 
+//font-size
+// for screen 1920px 
+%max__font-today{
+    font-weight: 700;
+    font-size:25px;
+}
+%max__font-cityWeatherDegree{
+    font-size:90px;
+}
+%max__cityWeatherSituation{
+    font-size:25px;
+}
+%max__cityName{
+    font-size:35px;
+    font-weight: 500;
+    margin-top:8vh;
+    padding-right: 10vw;
+    letter-spacing:4px; 
+}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -46,8 +66,8 @@ body{
     color:$white;
     h4{
         font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size:25px;
+        font-weight: 500;
+        font-size:18px;
     }
     
 }
@@ -79,6 +99,7 @@ body{
     margin-right:20vw;
     margin-top:10vh;
     border-radius: 10px;
+    box-shadow: 3px 5px 3px rgba(0,0,0,0.2);
 
     
   
@@ -99,14 +120,14 @@ body{
             
             .cityWeather__degree{
                 margin-top:0vh;
-                padding-top:9.1vh;
-                font-size:90px;
+                padding-top:7vh;
+                font-size:50px;
                 @extend %center;
     
             }
             .cityWeather__situation{
-                margin-top:-10vh;
-                font-size:25px;
+                margin-top:-8vh;
+                font-size:20px;
                 margin-right:1vw;
                 @extend %center;
             }
@@ -117,7 +138,9 @@ body{
                     margin-right:1.5vw;
                     font-weight:500;
                     letter-spacing:1px; 
-                    
+                    p{
+                        @extend %center;
+                    }
                 }
                 hr{
                     padding: 0;
@@ -129,6 +152,9 @@ body{
                     margin-left:3vw;
                     font-weight:500;
                     letter-spacing:1px; 
+                    p{
+                        @extend %center;
+                    }
                 }
             }
         }
@@ -137,16 +163,16 @@ body{
     }
     .cityWeather__city{
         .cityWeather__cityName{
-            font-size:35px;
+            font-size:25px;
             color: $white;
             font-weight: 500;
-            margin-top:8vh;
+            margin-top:10vh;
             padding-right: 10vw;
-            letter-spacing:4px; 
+            letter-spacing:2px; 
             .underline{
                 height:3px;
                 position: relative;
-                left:1.5rem;
+                left:1.2rem;
                 margin-top:5px;
                 bottom:0;
                 width:50%;
@@ -165,8 +191,6 @@ body{
     @extend %between;
     border-radius: 0 0 10px 10px;
     padding-bottom: 5vh;
-
-    
     padding-top: 5vh;
 }
 
@@ -198,7 +222,8 @@ body{
                 @extend %align-center;
                 font-weight:300;
                 margin-top:2vw;
-                padding-right:3vw;
+                padding-right:2vw;
+                font-size:13px;
             }
         }
         
