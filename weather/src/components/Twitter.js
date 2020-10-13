@@ -9,8 +9,9 @@ class Twitter extends React.Component{
        
     }
     
-
+    
     render(){
+
         return <>
             <div className="twitter-container">
                 <div className="twitter-title">
