@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style.scss';
-import paris from '../image/paris.jpg'
+import ForcastList from './ForcastList';
 
 class CityWeathers extends React.Component{
     constructor(){
@@ -39,6 +39,7 @@ class CityWeathers extends React.Component{
                 </div>
                 
             </div>
+            <ForcastList />
         </div>
        
         </>

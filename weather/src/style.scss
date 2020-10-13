@@ -22,6 +22,15 @@ $city_background:'./image/paris.jpg';
     display: flex;
     justify-content: space-between;
 }
+%left{
+    display: flex;
+    justify-content: flex-start;
+}
+
+%align-center{
+    display: flex;
+    align-items:center;
+}
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -63,6 +72,7 @@ body{
     
 }
 
+//city weather show
 .cityWeather__container{
     position: relative;
     margin-left:20vw;
@@ -146,4 +156,119 @@ body{
     }
 
     
+}
+
+//forcast list
+.forcastList-container{
+    width:60vw;
+    background-color:$white;
+    @extend %between;
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+}
+
+//present twitters
+.twitter-container{
+    @extend %align-column;
+    .twitter-title{
+        font-size:18px;
+        font-weight: 500;
+        @extend %center;
+        
+        span{
+            color:Dodgerblue;
+            margin-right:10px;
+            font-size:22px;
+        }
+    
+    }
+    .twitter-post{
+        .twitter-postContent{
+            @extend %left;
+            .twitter-userImage{
+                width:3vw;
+                height:3vw;
+                border-radius: 50%;
+                margin: 2vw 2vw 0 2vw;
+            }
+            .twitter-context{
+                @extend %align-center;
+                font-weight:300;
+                margin-top:2vw;
+                padding-right:3vw;
+            }
+        }
+        
+    }
+}
+
+
+//forcast-list
+.forcastListItem__container{
+    @extend %left;
+    padding-right:1vw;
+    padding-left:4vw;
+    .forcastList__Item{
+        @extend %align-column;
+        padding-right:3vw;
+        
+        .forcastList__Week{
+            @extend %center;
+            font-weight: 500;
+            font-size: 18px;
+            padding-bottom:3vh;
+        }
+        .forcastList__weatherImage{
+            @extend %center;
+            padding-bottom:1vh;
+
+        }
+        .forcastList__ItemDegree{
+            @extend %center;
+            font-weight: 500;
+            font-size: 18px;
+            padding-bottom:1vh;
+        }
+        .forcastList__weather{
+            @extend %center;
+            font-size: 14px;
+            font-weight: 500;
+
+        }
+    }
+}
+
+//weatherIcon
+.weatherIcon{
+    font-weight: 900;
+    font-size:40px;
+}
+.bolt{
+    color:#ACD1E9;
+}
+.wind{
+    color:#336699;
+}
+.smog{
+    color: #CCCCCC;
+
+}
+.cloud{
+    color:  #F9F6F4;
+}
+.sun{
+    color:  #FFCC00;
+}
+.sun-rain{
+    color: #99CCFF;
+}
+.cloud-sun{
+    color: #FFCC00;
+}
+.cloud-rain{
+    color: #99CCFF;
+}
+.snow-flake{
+    color: #336699;
 }
