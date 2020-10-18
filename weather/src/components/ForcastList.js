@@ -13,11 +13,13 @@ class ForcastList extends React.Component{
 
     render(){
         return <>
+        
             <div className="forcastList-container">
                   <Twitter />
                   <hr></hr>
                   <ForcastListItem />
             </div>   
+       
         </>
     }
 }
