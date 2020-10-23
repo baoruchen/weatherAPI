@@ -5,8 +5,8 @@ import ForcastListItem from './ForcastListItem';
 
 
 class ForcastList extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
        
     }
     
@@ -17,7 +17,7 @@ class ForcastList extends React.Component{
             <div className="forcastList-container">
                   <Twitter />
                   <hr></hr>
-                  <ForcastListItem />
+                  <ForcastListItem data = {this.props.data}/>
             </div>   
        
         </>

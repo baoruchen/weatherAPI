@@ -1,27 +1,19 @@
 import React from 'react';
 import '../style.scss';
 import Icons from './Icons';
-import Axios from 'axios';
 
-const city_name = 'Paris';
-const api_key = 'a36d7084bc5e87cebfcf7d5763bbaff6';
-const api=`http://api.openweathermap.org/data/2.5/forecast?q=${city_name}&units=metric&appid=${api_key}`;
 
 class ForcastListItem extends React.Component{
-    constructor(){
-        super();
-        this.state={
-            temperature:[],
-            weather:[],
-            icons:[],
+    constructor(props){
+        super(props);
         
-        }
        
     }
 
-    async componentDidMount(){
-        const {data:{list}} = await Axios.get(api);
-    
+   
+
+    render(){
+        
         let temperature = [];
         let weather = [];
         let icons = [];
@@ -29,33 +21,21 @@ class ForcastListItem extends React.Component{
         let temp;
         let weatherType;
         let icon;
-        for(let i=0; i<33;i++){
-             list_array = list[i];
-             temp = parseInt(list_array.main.temp);
-             temperature.push(temp);
-             weatherType = list_array.weather[0].main.toUpperCase();
-             weather.push(weatherType);
-             icon = list_array.weather[0].icon;
-             icons.push(icon);
-             i=i+7;
-        }
-     
-  
-       
-
-        this.setState({
-            temperature,
-            weather,
-            icons,
         
-        })
+        for(let i=0; i<33;i++){
+            list_array = this.props.data[i];
+            temp = parseInt(list_array.main.temp);
+            temperature.push(temp);
+            weatherType = list_array.weather[0].main.toUpperCase();
+            weather.push(weatherType);
+            icon = list_array.weather[0].icon;
+            icons.push(icon);
+            i=i+7;
+           }
 
-    }
-
-
-    render(){
-        const {icons,temperature,weather} = this.state;
         return <>
+         
+          
             <div className="forcastListItem__container">
                 <div className="forcastList__Item">
                     <div className="forcastList__Week">MON</div>
@@ -90,6 +70,7 @@ class ForcastListItem extends React.Component{
                   
             </div>   
         </>
+        
     }
 }
 export default ForcastListItem
