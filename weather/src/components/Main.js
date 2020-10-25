@@ -6,7 +6,7 @@ import Loading from './Loading';
 
 
 const city_name = 'Paris';
-const weatherAPI = `http://127.0.0.1:6543/weathers?c=${city_name}`;
+const weatherAPI = `https://weatherapi2021.herokuapp.com/weathers?c=${city_name}`;
 
 
 
